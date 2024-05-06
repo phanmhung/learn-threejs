@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FeedbackType, feedbackTypes } from "..";
-import Paragraph from "../../../layouts/Paragraph";
+import Paragraph from "@/widgets/Paragraph";
 
 interface FeedbackTypeStepProps {
   onFeedbackTypeChange: (type: FeedbackType) => void;

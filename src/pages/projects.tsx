@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { Flex, Heading, Text, Spinner, Box } from "@chakra-ui/react";
-import Layout from "../layouts/Layout";
-import ProjectList from "../components/projects/ProjectList";
+import Layout from "@/widgets/Layout";
+import ProjectList from "@/features/projects/ProjectList";
 import React from "react";
 import { NextSeo } from "next-seo";
 import { motion } from "framer-motion";

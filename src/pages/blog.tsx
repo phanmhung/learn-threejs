@@ -1,4 +1,4 @@
-import Container from "../layouts/Layout";
+import Container from "@/widgets/Layout";
 import {
   Heading,
   Box,
@@ -14,8 +14,8 @@ import { getAllPosts } from "./api/notion";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import BlogPost from "../components/BlogPosts";
-import Paragraph from "../layouts/Paragraph";
+import BlogPost from "@/features/BlogPosts";
+import Paragraph from "@/widgets/Paragraph";
 
 export async function getStaticProps() {
   const posts = await getAllPosts();

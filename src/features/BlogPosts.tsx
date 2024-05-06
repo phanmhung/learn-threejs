@@ -1,5 +1,5 @@
 import { Flex, useColorMode } from "@chakra-ui/react";
-import Paragraph from "../layouts/Paragraph";
+import Paragraph from "@/widgets/Paragraph";
 import { useState } from "react";
 
 const BlogPost = ({ children, ...props }) => {

@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import successImage from "../../../public/images/success.svg";
-import Paragraph from "../../../layouts/Paragraph";
+import Paragraph from "@/widgets/Paragraph";
 
 interface FeedbackSuccessProps {
   onFeedbackRestart: () => void;

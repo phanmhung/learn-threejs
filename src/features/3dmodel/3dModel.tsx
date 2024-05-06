@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { loadGLTFModel } from "../../lib/model";
-import { forwardRef } from "react";
-import { Box, Spinner } from "@chakra-ui/react";
+import { loadGLTFModel } from "@/shared/lib/model";
+import { ModelSpinner, ModelContainer } from "./ModelLoader";
 const easeOutCirc = (x: number): number => {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 };
@@ -12,11 +11,11 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const ModelViewerMid: React.FC<Props> = () => {
+const ModelViewer: React.FC<Props> = () => {
   const refContainer = useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const refRenderer = useRef<THREE.WebGLRenderer | null>(null);
-  const modelUrl = "/models/gameboy_advance_-_zelda_concept.glb";
+  const modelUrl = "/models/pokemon_firered_-_players_room.glb";
 
   const handleWindowResize = useCallback(() => {
     const renderer = refRenderer.current;
@@ -44,29 +43,32 @@ const ModelViewerMid: React.FC<Props> = () => {
       refRenderer.current = renderer;
 
       const scene = new THREE.Scene();
+      const target = new THREE.Vector3(-0.5, 1.2, 0);
+      const initialCameraPosition = new THREE.Vector3(
+        -20 * Math.sin(Math.PI * 2),
+        40,
+        -70 * Math.cos(Math.PI * 2)
+      );
 
-      const target = new THREE.Vector3(0, 1.2, 0);
-      const initialCameraPosition = new THREE.Vector3(0, 10, 20);
-
-      const scale = 2;
+      const scale = scH * 0.005 + 5.5;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        1,
-        1000
+        0.01,
+        50000
       );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
       controls.autoRotateSpeed = -2;
-      controls.target.copy(target);
+      controls.target = target;
 
       loadGLTFModel(scene, modelUrl, {
         receiveShadow: false,
@@ -76,13 +78,29 @@ const ModelViewerMid: React.FC<Props> = () => {
         setLoading(false);
       });
 
+      let req: number | null = null;
+      let frame = 0;
       const animate = () => {
-        requestAnimationFrame(animate);
-        controls.update();
+        req = requestAnimationFrame(animate);
+
+        if (frame <= 100) {
+          const factor = easeOutCirc(frame / 100);
+          const angle = Math.PI * 2 * factor; // Full rotation over 100 frames
+          camera.position.x = 70 * Math.sin(angle);
+          camera.position.z = 70 * Math.cos(angle);
+          camera.lookAt(target);
+          frame++;
+        } else {
+          controls.update();
+        }
+
         renderer.render(scene, camera);
       };
 
       return () => {
+        if (req !== null) {
+          cancelAnimationFrame(req);
+        }
         renderer.domElement.remove();
         renderer.dispose();
       };
@@ -96,45 +114,11 @@ const ModelViewerMid: React.FC<Props> = () => {
     };
   }, [handleWindowResize]);
 
-  return <ModelContainer ref={refContainer}></ModelContainer>;
-};
-
-export default ModelViewerMid;
-
-const ModelSpinner = () => (
-  <Spinner
-    size="xl"
-    position="absolute"
-    left="50%"
-    top="50%"
-    ml="calc(0px - var(--spinner-size) / 2)"
-    mt="calc(0px - var(--spinner-size))"
-  />
-);
-interface DogContainerProps {
-  children?: React.ReactNode;
-}
-const ModelContainer = forwardRef<HTMLDivElement, DogContainerProps>(
-  ({ children }, ref) => (
-    <Box
-      ref={ref}
-      m="auto"
-      mt={["-250px", "-250px", "-320px"]}
-      mb={["-40px", "-40px", "-40px"]}
-      w={[180, 480, 540]}
-      h={[380, 480, 540]}
-      position="relative"
-      zIndex="0"
-    >
-      {children}
-    </Box>
-  )
-);
-
-const Loader = () => {
   return (
-    <ModelContainer>
-      <ModelSpinner />
+    <ModelContainer ref={refContainer}>
+      {loading && <ModelSpinner />}
     </ModelContainer>
   );
 };
+
+export default ModelViewer;

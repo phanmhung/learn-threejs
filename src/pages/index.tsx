@@ -1,4 +1,4 @@
-import Layout from "../layouts/Layout";
+import Layout from "@/widgets/Layout";
 import {
   Heading,
   Box,
@@ -9,12 +9,12 @@ import {
 } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { motion } from "framer-motion";
-import Paragraph from "../layouts/Paragraph";
+import Paragraph from "@/widgets/Paragraph";
 import Script from "next/script";
-import ProjectCard from "../components/projects/ProjectCard";
+import ProjectCard from "@/features/projects/ProjectCard";
 import { RoughNotation } from "react-rough-notation";
 import { useEffect, useState } from "react";
-import ModelViewerMid from "../components/3dmodel/3dModelMid";
+import ModelViewerMid from "@/features/3dmodel/3dModelMid";
 
 const url = "https://phanminhhung.tech";
 const title = "Hung Phan";

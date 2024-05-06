@@ -1,6 +1,6 @@
 import { Key, useState } from "react";
 import useSWR from "swr";
-import fetcher from "../../scripts/fetcher";
+import fetcher from "@/shared/scripts/fetcher";
 import {
   InputGroup,
   Input,
