@@ -1,8 +1,8 @@
 import { NotionRenderer } from "react-notion"
-import Layout from "../../layouts/Layout"
 import { Text, Button, Link, Box } from '@chakra-ui/react'
 import { NextSeo } from "next-seo"
 import { ArrowLeftIcon } from "@chakra-ui/icons"
+import Layout from "@/widgets/layout"
 import { getAllSnippets } from '../api/notionSnippets'
 
 export async function getStaticProps({ params: { slug } }) {
@@ -22,7 +22,7 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default ({ snippet, blocks }) => {
+const SnippetPage = ({ snippet, blocks }) => {
   if (!snippet) return <Layout><Text>Loading...</Text></Layout>
   return (
     <>
@@ -75,6 +75,8 @@ export default ({ snippet, blocks }) => {
     </>
   )
 }
+
+export default SnippetPage;
 
 export async function getStaticPaths() {
   const snippets = await getAllSnippets();

@@ -1,7 +1,7 @@
 import { IconButton, useColorMode } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
 import { Box, Popover, PopoverTrigger, PopoverContent } from "@chakra-ui/react";
-import Paragraph from "@/widgets/Paragraph";
+import Paragraph from "@/widgets/paragraph";
 import WidgetForm from ".";
 
 export function Widget() {

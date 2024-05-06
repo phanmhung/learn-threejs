@@ -1,4 +1,4 @@
-import Layout from "@/widgets/Layout";
+import Layout from "@/widgets/layout";
 import {
   Heading,
   Box,
@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { motion } from "framer-motion";
-import Paragraph from "@/widgets/Paragraph";
+import Paragraph from "@/widgets/paragraph";
 import Script from "next/script";
 import ProjectCard from "@/features/projects/ProjectCard";
 import { RoughNotation } from "react-rough-notation";

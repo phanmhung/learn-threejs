@@ -8,9 +8,7 @@ import {
   Link,
   Divider,
 } from "@chakra-ui/react";
-
 import NextLink from "next/link";
-
 import { FaInstagram, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => (

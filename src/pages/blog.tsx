@@ -1,4 +1,4 @@
-import Container from "@/widgets/Layout";
+import Container from "@/widgets/layout";
 import {
   Heading,
   Box,
@@ -15,7 +15,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import BlogPost from "@/features/BlogPosts";
-import Paragraph from "@/widgets/Paragraph";
+import Paragraph from "@/widgets/paragraph";
 
 export async function getStaticProps() {
   const posts = await getAllPosts();

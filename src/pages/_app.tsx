@@ -5,7 +5,7 @@ import Head from "next/head";
 import "@fontsource/ibm-plex-sans/700.css";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/300.css";
-import Layout from "@/widgets/Layout";
+import Layout from "@/widgets/layout";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";
 import theme from "@/shared/theme/theme";

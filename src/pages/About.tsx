@@ -13,8 +13,8 @@ import {
   LightMode,
   Tag,
 } from "@chakra-ui/react";
-import Paragraph from "@/widgets/Paragraph";
-import Container from "@/widgets/Layout";
+import Paragraph from "@/widgets/paragraph";
+import Container from "@/widgets/layout";
 import { motion } from "framer-motion";
 
 const About = () => {

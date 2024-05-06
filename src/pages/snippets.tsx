@@ -10,10 +10,10 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import Container from "@/widgets/Layout";
+import Container from "@/widgets/layout";
 import { getAllSnippets } from "./api/notionSnippets";
 import { useState } from "react";
-import Paragraph from "@/widgets/Paragraph";
+import Paragraph from "@/widgets/paragraph";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 

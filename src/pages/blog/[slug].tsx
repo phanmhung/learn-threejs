@@ -1,5 +1,5 @@
 import { NotionRenderer } from "react-notion";
-import Layout from "@/widgets/Layout";
+import Layout from "@/widgets/layout";
 import { Text, Button, Box, Link } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { ArrowLeftIcon } from "@chakra-ui/icons";
