@@ -1,10 +1,10 @@
 import useSWR from "swr";
 import { Flex, Heading, Text, Spinner, Box } from "@chakra-ui/react";
-import Layout from "@/widgets/layout";
-import ProjectList from "@/features/projects/ProjectList";
-import React from "react";
 import { NextSeo } from "next-seo";
 import { motion } from "framer-motion";
+import React from "react";
+import Layout from "@/widgets/layout";
+import {ProjectList} from "@/features/projects";
 
 export default function Projects() {
   const fetcher = (url) => fetch(url).then((res) => res.json());

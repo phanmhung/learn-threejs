@@ -1,4 +1,3 @@
-import Container from "@/widgets/layout";
 import {
   Heading,
   Box,
@@ -10,12 +9,13 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { getAllPosts } from "./api/notion";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import BlogPost from "@/features/BlogPosts";
+import Container from "@/widgets/layout";
 import Paragraph from "@/widgets/paragraph";
+import BlogPost from "@/features/BlogPosts";
+import { getAllPosts } from "./api/notion";
 
 export async function getStaticProps() {
   const posts = await getAllPosts();
@@ -91,7 +91,7 @@ function Blog({ posts }) {
             </InputGroup>
             {!filteredBlogPosts.length && "No posts found."}
             {filteredBlogPosts.map((post, index) => (
-              <BlogPost>
+              <BlogPost key={`${post.title}+${index}`}>
                 <Flex flexDir={"column"}>
                   <Paragraph fontWeight="bold" mb={3} w="70%">
                     <Link

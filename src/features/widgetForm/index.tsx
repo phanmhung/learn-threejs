@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import { PopoverContent, useColorModeValue } from "@chakra-ui/react";
 import bugImg from "../../public/images/bug.svg";
 import lampImg from "../../public/images/lamp.svg";
 import cloudImg from "../../public/images/cloud.svg";
-
 import { FeedbackSuccess } from "./Steps/FeedbackSuccess";
 import { FeedBackContentStep } from "./Steps/FeedbackContentStep";
 import { FeedbackTypeStep } from "./Steps/FeedBackTypeStep";
-import { PopoverContent, useColorModeValue } from "@chakra-ui/react";
 
 export const feedbackTypes = {
   BUG: {

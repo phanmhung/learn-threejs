@@ -15,7 +15,8 @@ interface DogContainerProps {
   children?: React.ReactNode;
 }
 export const ModelContainer = forwardRef<HTMLDivElement, DogContainerProps>(
-  ({ children }, ref) => (
+  function ModelContainer ({ children }, ref){
+    return(
     <Box
     ref={ref}
     m="auto"
@@ -29,7 +30,8 @@ export const ModelContainer = forwardRef<HTMLDivElement, DogContainerProps>(
     >
       {children}
     </Box>
-  )
+    )
+  }
 );
 
 const Loader = () => {

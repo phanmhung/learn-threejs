@@ -24,8 +24,9 @@ export default function Guestbook() {
   useEffect(() => {
     fetchMessages();
   }, []);
-
-  console.log("messages", messages);
+  const buttonSendBg = useColorModeValue("blue.50", "blue.900");
+  const buttonSignOutBg = useColorModeValue("red.50", "red.100");
+  const buttonSignOutColor = useColorModeValue("red.500", "red.900");
 
   async function fetchMessages() {
     const res = await fetch("/api/messages");
@@ -114,7 +115,7 @@ export default function Guestbook() {
                 alignItems="center"
               >
                 <Button
-                  bg={useColorModeValue("blue.50", "blue.900")}
+                  bg={buttonSendBg}
                   onClick={handleSend}
                   disabled={!message}
                   fontSize="sm"
@@ -123,8 +124,8 @@ export default function Guestbook() {
                   send
                 </Button>
                 <Button
-                  bg={useColorModeValue("red.50", "red.100")}
-                  color={useColorModeValue("red.500", "red.900")}
+                  bg={buttonSignOutBg}
+                  color={buttonSignOutColor}
                   onClick={() => signOut()}
                   fontSize="sm"
                   fontWeight="sm"

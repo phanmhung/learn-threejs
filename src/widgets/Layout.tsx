@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Flex, Stack } from "@chakra-ui/react";
 import {Navbar} from "@/features/nav";
-import ModelViewer from "@/features/3dmodel";
-import Footer from "./Footer";
+import {ModelViewer} from "@/features/3dmodel";
+import Footer from "./footer";
 
 export default function Layout({ children }) {
   return (

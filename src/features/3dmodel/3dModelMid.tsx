@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { loadGLTFModel } from "@/shared/lib/model";
 import { forwardRef } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
+import { loadGLTFModel } from "@/shared/lib/model";
 const easeOutCirc = (x: number): number => {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 };
@@ -115,20 +115,22 @@ interface DogContainerProps {
   children?: React.ReactNode;
 }
 const ModelContainer = forwardRef<HTMLDivElement, DogContainerProps>(
-  ({ children }, ref) => (
-    <Box
-      ref={ref}
-      m="auto"
-      mt={["-250px", "-250px", "-320px"]}
-      mb={["-40px", "-40px", "-40px"]}
-      w={[180, 480, 540]}
-      h={[380, 480, 540]}
-      position="relative"
-      zIndex="0"
-    >
-      {children}
-    </Box>
-  )
+  function ModelContainer({ children }, ref) { // Add display name to the component definition
+    return (
+      <Box
+        ref={ref}
+        m="auto"
+        mt={["-250px", "-250px", "-320px"]}
+        mb={["-40px", "-40px", "-40px"]}
+        w={[180, 480, 540]}
+        h={[380, 480, 540]}
+        position="relative"
+        zIndex="0"
+      >
+        {children}
+      </Box>
+    );
+  }
 );
 
 const Loader = () => {

@@ -1,4 +1,4 @@
-export default async (req, res) => {
+const githubApi = async (req, res) => {
     const url = "https://api.github.com/users/phanmhung/repos?per_page=100"
     const response = await fetch(url)
     const json = await response.json()
@@ -23,4 +23,6 @@ export default async (req, res) => {
         repos: projectsList
     })
 }
+
+export default githubApi;
 

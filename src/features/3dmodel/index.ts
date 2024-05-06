@@ -1,2 +1,3 @@
 import ModelViewer from "./3dModel";
-export default ModelViewer;
+import ModelViewerMid from "./3dModelMid";
+export {ModelViewer, ModelViewerMid};

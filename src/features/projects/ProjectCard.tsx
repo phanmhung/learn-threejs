@@ -10,7 +10,6 @@ import {
     Button,
     useColorModeValue,
 } from '@chakra-ui/react'
-
 import { ExternalLinkIcon, ViewIcon } from '@chakra-ui/icons'
 
 interface ProjectCardProps {

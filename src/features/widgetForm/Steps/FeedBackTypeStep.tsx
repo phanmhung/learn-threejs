@@ -3,14 +3,10 @@ import {
   Image,
   PopoverBody,
   PopoverCloseButton,
-  PopoverContent,
-  PopoverHeader,
-  useColorMode,
-  useColorModeValue,
+  PopoverHeader
 } from "@chakra-ui/react";
-import React from "react";
-import { FeedbackType, feedbackTypes } from "..";
 import Paragraph from "@/widgets/paragraph";
+import { FeedbackType, feedbackTypes } from "..";
 
 interface FeedbackTypeStepProps {
   onFeedbackTypeChange: (type: FeedbackType) => void;

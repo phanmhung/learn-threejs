@@ -5,15 +5,13 @@ import Head from "next/head";
 import "@fontsource/ibm-plex-sans/700.css";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/300.css";
-import Layout from "@/widgets/layout";
 import { SessionProvider } from "next-auth/react";
-import { Analytics } from "@vercel/analytics/react";
+import Layout from "@/widgets/layout";
 import theme from "@/shared/theme/theme";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Analytics />
       <ChakraProvider theme={theme}>
         <Head>
           <link rel="icon" type="favicon" href="../static/favicon.ico" />

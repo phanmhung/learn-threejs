@@ -1,8 +1,8 @@
 import { NotionRenderer } from "react-notion";
-import Layout from "@/widgets/layout";
 import { Text, Button, Box, Link } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import { ArrowLeftIcon } from "@chakra-ui/icons";
+import Layout from "@/widgets/layout";
 import { getAllPosts } from "../api/notion";
 
 export async function getStaticProps({ params: { slug } }) {
@@ -25,7 +25,7 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default ({ post, blocks }) => {
+const BlogPost = ({ post, blocks }) => {
   if (!post)
     return (
       <Layout>
@@ -84,6 +84,8 @@ export default ({ post, blocks }) => {
     </>
   );
 };
+
+export default BlogPost;
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();

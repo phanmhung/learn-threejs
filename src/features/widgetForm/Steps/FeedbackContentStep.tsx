@@ -1,4 +1,3 @@
-import { FeedbackType, feedbackTypes } from "..";
 import { FormEvent, useState } from "react";
 import {
   Button,
@@ -13,6 +12,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ArrowLeftIcon, ChatIcon } from "@chakra-ui/icons";
+import { FeedbackType, feedbackTypes } from "..";
 
 interface FeedBackContentStepProps {
   feedbackType: FeedbackType;

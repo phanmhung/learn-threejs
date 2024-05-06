@@ -1,6 +1,6 @@
 import { Flex, useColorMode } from "@chakra-ui/react";
-import Paragraph from "@/widgets/paragraph";
 import { useState } from "react";
+import Paragraph from "@/widgets/paragraph";
 
 const BlogPost = ({ children, ...props }) => {
   const [opacity, setOpacity] = useState(0);
