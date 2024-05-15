@@ -29,4 +29,5 @@ jobs:
           git pull origin main
           git status
           yarn install
+          yarn build
           pm2 restart learn-threejs
