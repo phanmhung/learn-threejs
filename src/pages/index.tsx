@@ -102,7 +102,7 @@ export default function Home() {
                 color={useColorModeValue("black", "pink")}
                 padding={0}
               >
-                JavaScript/Typescript, Python
+                JavaScript/Typescript, C++, Python
               </RoughNotation>
               , along with their ecosystems. I&apos;m a multipotentialite who loves
               solving problems and learning new things.

@@ -16,7 +16,7 @@ const ModelViewerMid: React.FC<Props> = () => {
   const refContainer = useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const refRenderer = useRef<THREE.WebGLRenderer | null>(null);
-  const modelUrl = "/models/gameboy_advance_-_zelda_concept.glb";
+  const modelUrl = "/models/workbench.glb";
 
   const handleWindowResize = useCallback(() => {
     const renderer = refRenderer.current;
@@ -48,7 +48,7 @@ const ModelViewerMid: React.FC<Props> = () => {
       const target = new THREE.Vector3(0, 1.2, 0);
       const initialCameraPosition = new THREE.Vector3(0, 10, 20);
 
-      const scale = 2;
+      const scale = 3;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -120,10 +120,10 @@ const ModelContainer = forwardRef<HTMLDivElement, DogContainerProps>(
       <Box
         ref={ref}
         m="auto"
-        mt={["-250px", "-250px", "-320px"]}
+        mt={["-250px", "-250px", "-120px"]}
         mb={["-40px", "-40px", "-40px"]}
-        w={[180, 480, 540]}
-        h={[380, 480, 540]}
+        w={[180, 480, 500]}
+        h={[380, 480, 300]}
         position="relative"
         zIndex="0"
       >
