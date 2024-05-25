@@ -57,6 +57,11 @@ const MenuHamburguer = () => {
               </NextLink>
             </MenuItem>
             <MenuItem>
+              <NextLink href="/education" passHref>
+                education
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
               <NextLink href="/work" passHref>
                 work
               </NextLink>
