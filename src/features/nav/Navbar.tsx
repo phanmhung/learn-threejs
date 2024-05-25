@@ -68,6 +68,9 @@ const Navbar = () => {
             <LinkItem target="_self" href="/projects" path={path}>
               projects
             </LinkItem>
+            <LinkItem target="_self" href="/education" path={path}>
+              education
+            </LinkItem>
             <LinkItem target="_self" href="/work" path={path}>
               work
             </LinkItem>
