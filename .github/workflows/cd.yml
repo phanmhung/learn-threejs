@@ -20,7 +20,7 @@ jobs:
     - name: Deploy using ssh
       uses: appleboy/ssh-action@v1.0.3
       with:
-        node-version: '20.x'
+        node-version: '20.12.2'
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
